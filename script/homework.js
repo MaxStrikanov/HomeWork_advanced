@@ -10,19 +10,8 @@ let product = numArr.reduce( ( prev, curr ) => {
 });
 
 console.log( product );
-
-const exponent = ( product, n ) => {
-
-    let result = 1;
-    
-    for (let i = 0; i < n; i++) {
-      result *= product;
-    }
-    return result;
-}
-
-console.log( exponent( product, 3 ) );
-console.log( exponent( product, 3 ).toString().slice(0,2) ); 
+console.log( (product ** 3));
+console.log( (product ** 3).toString().slice(0,2) );
 
 
 
