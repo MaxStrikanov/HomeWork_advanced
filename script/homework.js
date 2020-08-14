@@ -1,3 +1,4 @@
+  
 'use strict';
 
 const num = 266219;
@@ -10,9 +11,19 @@ let product = numArr.reduce( ( prev, curr ) => {
 });
 
 console.log( product );
-console.log( (product ** 3));
-console.log( (product ** 3).toString().slice(0,2) );
 
+const exponent = ( product, n ) => {
+
+    let result = 1;
+    
+    for (let i = 0; i < n; i++) {
+      result *= product;
+    }
+    return result;
+}
+
+console.log( exponent( product, 3 ) );
+console.log( exponent( product, 3 ).toString().slice(0,2) ); 
 
 
 
