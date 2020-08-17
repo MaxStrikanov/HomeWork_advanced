@@ -1,32 +1,41 @@
-'use strict';
+const lang = ['ru', 'en'];
 
-const num = 266219;
-let numArr = Array.from( num.toString() );
+let DayWeekRu = ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье'];
+let DayWeekEn = ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'];
 
-console.log( numArr );
+let array = [
+    ['ru', 'en'], 
+    ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье'],
+    ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday']
+]
 
-let product = numArr.reduce( ( prev, curr ) => { 
-    return prev * curr 
-});
+let question =  prompt('Выберите язык!');
 
-console.log( product );
-
-const exponent = ( product, n ) => {
-
-    let result = 1;
-    
-    for (let i = 0; i < n; i++) {
-      result *= product;
-    }
-    return result;
+if ( question === lang[0]) {
+    console.log(DayWeekRu);
+} else {
+    console.log(DayWeekEn);
 }
 
-console.log( exponent( product, 3 ) );
-console.log( exponent( product, 3 ).toString().slice(0,2) ); 
+switch (question) {
+    case 'ru':
+        console.log(DayWeekRu);
+        break;
+    case  'en': 
+        console.log(DayWeekEn);
+       break;
+}
 
+if ( question ===  array[0][0])
+    console.log(array[1]);
+else {
+    console.log(array[2]);
+}
+      
+let namePerson = prompt('Введите имя' );
 
-
-
-
-
+let name = ( namePerson = 'Артем' ) ? 'директор' : 
+( namePerson = 'Максим' ) ? 'преподаватель' :
+'студент';
+console.log(name);
 
