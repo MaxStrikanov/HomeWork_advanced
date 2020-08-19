@@ -28,7 +28,7 @@ const task = () => {
     console.log(shortData + ' - ' + time );
  }
 
-setInterval(  1000);
+setInterval(task,  1000);
 
 
 
