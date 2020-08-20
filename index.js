@@ -12,23 +12,34 @@ let hour = data.getHours();
 let minute = data.getMinutes();
 let second = data.getSeconds();
 
-const addZero = (n) => { n < 10 ? '0'+ n : n;}
+const addZero = (n) => { 
+  
+  let text = n < 10 ? '0'+ n : n;
+  return text;
+}
 
-const addText = (n) =>
+const addDeclension = (n) =>
  { 
-     ( n > 4 && n < 21 ) ? 'ов' : '';
-     ( n >= 1  && n <= 4 ) ? 'а' : '';
-
+    let text = ( n > 4 && n <= 20) ? 'ов' :  
+               ( n === 1 || n === 21) ? '' : 'a';
+                return text;
     };
 
-const task = () => { 
+console.log(addDeclension());
 
-    console.log('Сегодня ' + dayWeek  + ', '+ fullData + ', ' + hour + 
-            ' час' + `${addText(hour)}` + minute + ' минуты ' + second + ' секунд' );
-    console.log(shortData + ' - ' + time );
+const taskA = () => { 
+
+    document.getElementsByTagName('h1')[0].textContent = ('Сегодня ' + dayWeek  + ', '+ fullData + ', ' + hour + 
+            ' час' + `${addDeclension(hour)} ` + minute + ' минуты ' + second + ' секунд' );    
  }
 
-setInterval(task,  1000);
+const taskB = () => {
+
+    document.getElementsByTagName('h1')[1].innerHTML = (shortData + ' - ' + time );
+}
+
+setInterval(taskA, 1000);
+setInterval(taskB, 1000);
 
 
 
