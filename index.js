@@ -25,8 +25,6 @@ const addDeclension = (n) =>
                 return text;
     };
 
-console.log(addDeclension());
-
 const taskA = () => { 
 
     document.getElementsByTagName('h1')[0].textContent = ('Сегодня ' + dayWeek  + ', '+ fullData + ', ' + hour + 
