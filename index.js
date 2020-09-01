@@ -27,17 +27,17 @@ const addDeclension = (n) =>
 
 const taskA = () => { 
 
-    document.getElementsByTagName('h1')[0].textContent = ('Сегодня ' + dayWeek  + ', '+ fullData + ', ' + hour + 
+    document.getElementsByTagName('h1')[0].textContent = ( 'Сегодня ' + dayWeek  + ', '+ fullData + ', ' + hour + 
             ' час' + `${addDeclension(hour)} ` + minute + ' минуты ' + second + ' секунд' );    
  }
 
 const taskB = () => {
 
-    document.getElementsByTagName('h1')[1].innerHTML = (shortData + ' - ' + time );
+    document.getElementsByTagName('h1')[1].innerHTML = ( shortData + ' - ' + time );
 }
 
-setInterval(taskA, 1000);
-setInterval(taskB, 1000);
+setInterval( taskA, 1000 );
+setInterval( taskB, 1000 );
 
 
 
